@@ -3,23 +3,26 @@ import logo from './logo.svg';
 import './App.css';
 import DogsList from './components/DogsList'
 import DogsListContainer from './components/DogsListContainer'
+import { Route } from 'react-router-dom'
+import DogBreedImages from './components/DogBreedImages'
 
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        {/* <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header> */}
+       
         <main>
           <DogsList />
-          <DogsListContainer />
+          {/* <DogsListContainer /> */}
+          <Route exact path="/" component={DogsListContainer} />
+         
+          <Route path="/dog-breeds/:breed" component={DogBreedImages} />
+          {/* <li key={breed}>
+          </li> */}
+
+
         </main>
-        {/* <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p> */}
       </div>
     );
   }

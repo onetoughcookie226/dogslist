@@ -1,9 +1,12 @@
 
 import React, { PureComponent } from 'react'
+import { Link } from 'react-router-dom'
+import DogBreedImages from './DogBreedImages'
 
 export default class DogsList extends PureComponent {
   renderDogBreed(breed) {
-    return <li key={breed}>{breed}</li>
+    // return <li key={breed}>{breed}</li>
+   return  <li key={breed}><Link to={ `/dog-breeds/${breed}` }>{breed}</Link></li>
   }
 
   render() {
@@ -22,6 +25,9 @@ export default class DogsList extends PureComponent {
     )
   }
 }
+
+
+//---------------------One Big componenet ------------------------
 // import React, {PureComponent} from 'react'
 // import request from 'superagent';
 
